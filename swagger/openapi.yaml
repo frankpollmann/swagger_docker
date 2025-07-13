@@ -4,7 +4,7 @@ info:
   version: 1.0.0
 
 servers:
-  - url: http://unraid.local:3001  # oder z. B. http://backend:3000 im Compose-Netzwerk
+  - url: http://unraid.local:3001
 
 paths:
   /ping:
@@ -13,3 +13,11 @@ paths:
       responses:
         '200':
           description: OK, der Container lebt.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  alive:
+                    type: boolean
+                    example: true
