@@ -3,8 +3,8 @@ services:
     image: swaggerapi/swagger-ui
     container_name: swagger_ui
     ports:
-      - "4001:8080"  # oder z. B. "3002:8080" je nach Bedarf
-    environment:
-      SWAGGER_JSON: /docs/openapi.yaml
+      - "4001:8080"
     volumes:
       - ./swagger:/docs:ro
+    environment:
+      SWAGGER_JSON: /docs/openapi.yaml
